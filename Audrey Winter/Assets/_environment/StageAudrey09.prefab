@@ -809,6 +809,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1639556886762888
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4345091312704686}
+  m_Layer: 0
+  m_Name: Audrey Eyes
+  m_TagString: Audrey Eyes
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1644378031148698
 GameObject:
   m_ObjectHideFlags: 1
@@ -835,7 +850,7 @@ GameObject:
   m_Layer: 0
   m_Name: StageAudrey09
   m_TagString: Stage
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1342,6 +1357,7 @@ Transform:
   - {fileID: 4309669140728298}
   - {fileID: 4528741346069596}
   - {fileID: 4337801977529566}
+  - {fileID: 4345091312704686}
   m_Father: {fileID: 4884649645090434}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1393,7 +1409,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1137750660525744}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.13, y: 1.89, z: 0.755}
+  m_LocalPosition: {x: 0.421, y: 1.54, z: 0.685}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4133731402144286}
@@ -1506,6 +1522,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4140433464391898}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4345091312704686
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1639556886762888}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.055, z: 0.233}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4140433464391898}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4367672526495112
 Transform:
@@ -1633,7 +1662,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1714073435183300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.82, y: 0.49, z: 0.55}
+  m_LocalPosition: {x: -0.287, y: 1.297, z: 0.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4133731402144286}
@@ -2329,7 +2358,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1049359929905784}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2338,7 +2367,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 11be7eab1477ec7439aa63cc89aec3f1, type: 2}
+  - {fileID: 2100000, guid: 5986214a27458f341a8ccb2786ffd502, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2437,7 +2466,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.1
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: d8197f2c2b1357242839719fbb63dc45, type: 2}
 --- !u!114 &114316111880728690
@@ -2487,16 +2516,39 @@ MonoBehaviour:
   personalSpaceDistance: 0.1
   minLookTime: 3
   maxLookTime: 10
-  thirdPersonPlayerEyeCenter: {fileID: 0}
   keepTargetEvenWhenLost: 1
   OnStartLookingAtPlayer:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114225687703135680, guid: 38e8294b5bbfcda479a1881b57e7e3f0,
+          type: 2}
+        m_MethodName: AckOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   OnStopLookingAtPlayer:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114225687703135680, guid: 38e8294b5bbfcda479a1881b57e7e3f0,
+          type: 2}
+        m_MethodName: AckOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114706305006253086
@@ -3065,14 +3117,14 @@ MonoBehaviour:
     isEyelidBlendshapeClosedSet: 1
     isEyelidBlendshapeLookUpSet: 1
     isEyelidBlendshapeLookDownSet: 1
-  kMinNextBlinkTime: 3
-  kMaxNextBlinkTime: 15
-  blinkSpeed: 1
+  kMinNextBlinkTime: 2
+  kMaxNextBlinkTime: 8
+  blinkSpeed: 0.329
   eyelidsFollowEyesVertically: 1
   maxEyeHorizAngle: 35
   maxEyeHorizAngleTowardsNose: 35
-  crossEyeCorrection: 4.39
-  nervousness: 0.91
+  crossEyeCorrection: 4.92
+  nervousness: 6.14
   limitHeadAngle: 0
 --- !u!136 &136474341343575602
 CapsuleCollider:
@@ -3620,7 +3672,7 @@ NavMeshAgent:
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0.3
+  m_StoppingDistance: 0.15
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1

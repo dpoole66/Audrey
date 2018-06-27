@@ -44,11 +44,12 @@ namespace RealisticEyeMovements {
 			[Range(1f, 100f)]
 			public float maxLookTime = 10f;
 
-			[Tooltip("For 3rd person games, set this to the player's eye center transform")]
-			#if !UNITY_WP8 && !UNITY_WP_8_1 && !UNITY_METRO
-				[UnityEngine.Serialization.FormerlySerializedAs ("playerEyeCenter")]
-			#endif
-			public Transform thirdPersonPlayerEyeCenter;
+        [Tooltip("For 3rd person games, set this to the player's eye center transform")]
+    #if !UNITY_WP8 && !UNITY_WP_8_1 && !UNITY_METRO
+            [UnityEngine.Serialization.FormerlySerializedAs("playerEyeCenter")]
+    #endif
+            //public Transform thirdPersonPlayerEyeCenter;    // Dum Dum to find eyes with ObjectFindWithTag
+            private Transform thirdPersonPlayerEyeCenter;
 
 			[Tooltip("Keep trying to track target even when it moves out of sight")]
 			public bool keepTargetEvenWhenLost = true;
@@ -104,8 +105,11 @@ namespace RealisticEyeMovements {
 		{
 			#if UNITY_5_4_OR_NEWER || UNITY_2017_1_OR_NEWER
 				UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
-			#endif
-		}
+            #endif
+
+                thirdPersonPlayerEyeCenter = GameObject.FindGameObjectWithTag("MainCamera").transform;
+     
+        }
 
 
 

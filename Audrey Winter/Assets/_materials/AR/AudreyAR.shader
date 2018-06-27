@@ -37,7 +37,7 @@
 
 		void surf (Input IN, inout SurfaceOutputStandard o) {
 			//Wack light testing
-			fixed _LightBoost = _GlobalLightEstimation * 1.5f;
+			fixed _LightBoost = Mathf.Clamp01(_GlobalLightEstimation / 3.0 + _GlobalLightEstimation); // dummy 
 			// Albedo comes from a texture tinted by color
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color * _LightBoost;
 			o.Albedo = c.rgb;

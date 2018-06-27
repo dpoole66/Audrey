@@ -51,4 +51,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c32aeb14bf8fa7748a8ee1a3c2b595c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  auderyAnim: {fileID: 0}
+  auderyAnim: {fileID: 95950802374634662, guid: 18ff43c4f5d46f7488d88794351ef253,
+    type: 2}

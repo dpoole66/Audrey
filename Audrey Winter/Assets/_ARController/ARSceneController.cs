@@ -20,11 +20,11 @@ namespace GoogleARCore.HelloAR
     public class  ARSceneController : MonoBehaviour
     {
 
-        public Camera FirstPersonCamera;
+        public Camera m_ARCamera;
         public GameObject TrackedPlanePrefab;
         public GameObject CharPrefab;
         public GameObject SearchingForPlaneUI;
-        public int MoveCloserSteps = 3;
+        //public int MoveCloserSteps = 3;
         private List<DetectedPlane> m_NewPlanes = new List<DetectedPlane>();
         private List<DetectedPlane> m_AllPlanes = new List<DetectedPlane>();
 
@@ -35,10 +35,10 @@ namespace GoogleARCore.HelloAR
         public static int CurrentNumberOfChars = 0;
         private GameObject CharObject;
         Vector3 Position3;
-
+        
         void Start()
         {
-            CharPrefab.SetActive(true);
+            CharPrefab.SetActive(true);          
         }
 
         public void Update()
@@ -46,10 +46,8 @@ namespace GoogleARCore.HelloAR
             _QuitOnConnectionErrors();
             _MotionTracking();
             _PlaneDetection();
-            _InstantiateOnTouch();
+            _InstantiateOnTouch();  
             //_LightEstimation();
-
-
 
         }
         private void _QuitOnConnectionErrors()
@@ -144,7 +142,7 @@ namespace GoogleARCore.HelloAR
         {
             // If the player has not touched the screen, we are done with this update.
             Touch touch;
-            
+
             int numberOfCharsAllowed = 1;
 
             if (Input.touchCount < 1 || (touch = Input.GetTouch(0)).phase != TouchPhase.Began)
@@ -158,19 +156,22 @@ namespace GoogleARCore.HelloAR
 
             if (Frame.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit))
             {
+                
                 Debug.Log("Screen Touched");
                 if (CurrentNumberOfChars < numberOfCharsAllowed) {
                     Debug.Log("Current Stages " + CurrentNumberOfChars);
-                    CharObject = Instantiate(CharPrefab, hit.Pose.position, hit.Pose.rotation);
+                    CharObject = Instantiate(CharPrefab, hit.Pose.position * 10.0f, hit.Pose.rotation);
                     CurrentNumberOfChars = CurrentNumberOfChars + 1;                            
                     var anchor = hit.Trackable.CreateAnchor(hit.Pose);
                     if ((hit.Flags & TrackableHitFlags.PlaneWithinPolygon) != TrackableHitFlags.None)
                     {  
-                        Vector3 cameraPositionSameY = FirstPersonCamera.transform.position; // Get the camera position and match the y-component with the hit position.
-                        cameraPositionSameY.y = hit.Pose.position.y;
-                        CharObject.transform.LookAt(cameraPositionSameY, CharObject.transform.up);
+                        Vector3 cameraPositionSameY = m_ARCamera.transform.position; // Get the camera position and match the y-component with the hit position.
+                        cameraPositionSameY.y = hit.Pose.position.y * 10.0f;
+                        CharObject.transform.LookAt(cameraPositionSameY, CharObject.transform.up);                 
                     }  
-                CharObject.transform.parent = anchor.transform;
+
+                    CharObject.transform.parent = anchor.transform;      
+       
                 }
          
             }

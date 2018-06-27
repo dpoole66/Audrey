@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_scenes/Audrey_3.unity
+- path: Assets/_scenes/AudreyFull_09a.unity
   isLoaded: 1
   isActive: 1

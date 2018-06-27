@@ -56,7 +56,7 @@ public class AgentAudrey : MonoBehaviour {
 
         //Pull agent towards character
         if (worldDeltaPosition.magnitude > agent.radius)
-            agent.nextPosition = transform.position + 0.9f * worldDeltaPosition;
+            agent.nextPosition = transform.position + 0.3f * worldDeltaPosition;
     }
 
     void OnAnimatorMove() {

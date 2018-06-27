@@ -53,11 +53,11 @@ namespace GoogleARCore
             }
 
             // Normalize pixel intensity by middle gray in gamma space.
-            const float middleGray = 0.466f;
+            const float middleGray = 0.16f;                                       // 0.466f   was original. The lower (lighter gray value) the lighter the effect of the boost. 
             float normalizedIntensity = Frame.LightEstimate.PixelIntensity / middleGray;
 
             // Apply color correction along with normalized pixel intensity in gamma space.
-            Shader.SetGlobalColor("_GlobalColorCorrection", Frame.LightEstimate.ColorCorrection * (normalizedIntensity * 1.5f));
+            Shader.SetGlobalColor("_GlobalColorCorrection", Frame.LightEstimate.ColorCorrection * normalizedIntensity);
 
             // Set _GlobalLightEstimation for backward compatibility.
             Shader.SetGlobalFloat("_GlobalLightEstimation", normalizedIntensity);

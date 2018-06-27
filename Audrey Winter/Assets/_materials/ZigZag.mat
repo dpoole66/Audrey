@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ZigZag
-  m_Shader: {fileID: 4800000, guid: e0a1321a33288460a92c9a294fcd7641, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0aa506fe571e5b34db453ed4f8e87f9b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -40,7 +40,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 4b225fbcf0357a54e92dc4080c9f40b6, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 13, y: 13}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -60,13 +60,14 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.197
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.88
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PointSize: 25
+    - _Shininess: 0.078125
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
